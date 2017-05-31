@@ -124,3 +124,15 @@ test13 <- function() {
   cat("Hello\nWorld", sep = "")
   cat("\r", crayon::green("123"), crayon::red("45"), "\n", sep="")
 }
+####################
+test14 <- function() {
+  show_expected("Beginning\n1\n2\nHello world\n3\nEND")
+  cat("Beginning")
+  message(1)
+  message(2)
+  cat("Hello ")
+  cat("world\n")
+  message(3)
+  cat("END")
+}
+#####################
