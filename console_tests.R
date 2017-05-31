@@ -127,7 +127,7 @@ test13 <- function() {
 ####################
 test14 <- function() {
   show_expected("Beginning\n1\n2\nHello world\n3\nEND")
-  cat("Beginning")
+  cat("Beginning\n")
   message(1)
   message(2)
   cat("Hello ")
@@ -135,4 +135,15 @@ test14 <- function() {
   message(3)
   cat("END")
 }
-#####################
+#################
+test15 <- function() {
+  show_expected("1\n2\nError in h15() : A multiline error without colors!\nOh No!")
+  message("1")
+  message("2")
+  g15() 
+}
+g15 <- function() h15()
+h15 <- function() {
+  stop("A multiline error without colors!\n", "Oh No!")
+}
+######################
