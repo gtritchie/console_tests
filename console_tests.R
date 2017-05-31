@@ -11,7 +11,6 @@ test1 <- function() {
   message(2)
   message(3)
   message(4)
-  Sys.sleep(1)
   g() 
 }
 g <- function() h()
@@ -26,7 +25,6 @@ test2 <- function() {
   message(2)
   message(3)
   message(4)
-  Sys.sleep(1)
   g2() 
 }
 g2 <- function() h2()
@@ -83,7 +81,6 @@ test8 <- function() {
   message(2)
   message(3)
   message(4)
-  Sys.sleep(1)
   test8a() 
 }
 test8a <- function() test8b()
