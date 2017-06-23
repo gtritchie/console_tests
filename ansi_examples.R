@@ -21,4 +21,5 @@ ansi_examples <- function() {
         cat("\n")
       }
    }
- }
+ 
+}
