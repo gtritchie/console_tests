@@ -144,3 +144,30 @@ h15 <- function() {
   stop("A multiline error without colors!\n", "Oh No!")
 }
 ######################
+test16 <- function() {
+  show_expected("one\ntwo\nthree")
+  cat("one\n")
+  cat("two\n")
+  cat("three")
+}
+
+#####################
+f1 <- function() {
+  cat("✔ xxx", crayon::blue("yyy"), "xxx")
+  cat("\r")
+  cat("✔xxx", crayon::red("yyy"), "zzz")
+  cat("\n")
+}
+f2 <- function() {
+  cat("✔ xxx", crayon::blue("yyy"), "xxx")
+  cat("\r")
+  cat("✔ xxx", crayon::red("yyy"), "zzz")
+  cat("\n")
+}
+test17 <- function() {
+  show_expected(c("✔xxx ", crayon::red("yyy"), " zzzx\n\n",
+                  "✔ xxx ", crayon::red("yyy"), " zzz"))
+  f1()
+  cat("\n")
+  f2()
+}
