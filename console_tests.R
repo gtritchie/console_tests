@@ -180,3 +180,18 @@ test18 <- function() {
   )
   cat(str, sep = "")
 }
+#####################
+test19 <- function() {
+  show_expected("This is visible in both This is visible only in the terminal")
+  cat("\033[7m\033[31mThis is visible in both \033[39mThis is visible only in the terminal\033[27m")
+}
+#####################
+test20 <- function() {
+  show_expected("Part One Other Part")
+  cat("\033[7m\033[103mPart One \033[49mOther Part\033[27m")
+}
+#####################
+test21 <- function() {
+  show_expected("Part One Other Part")
+  cat("\033[7m\033[103m\033[31mPart One \033[49m\033[39mOther Part\033[27m")
+}
