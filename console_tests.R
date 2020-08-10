@@ -195,3 +195,13 @@ test21 <- function() {
   show_expected("Part One Other Part")
   cat("\033[7m\033[103m\033[31mPart One \033[49m\033[39mOther Part\033[27m")
 }
+#####################
+test22 <- function() {
+  show_expected("Inverted with red background Inverted with default background")
+  cat("\033[7m\033[38;5;196mInverted with red background \033[39mInverted with default background\033[27m")
+}
+#####################
+test23 <- function() {
+  show_expected("Inverted with red background yellow foreground Inverted with default colors")
+  cat("\033[7m\033[38;5;196m\033[48;5;228mInverted with red background yellow foreground \033[39m\033[49mInverted with default colors\033[27m")
+}
