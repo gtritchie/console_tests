@@ -202,6 +202,13 @@ test22 <- function() {
 }
 #####################
 test23 <- function() {
-  show_expected("Inverted with red background yellow foreground Inverted with default colors")
+  show_expected("\033[7m\033[38;5;196m\033[48;5;228mInverted with red background yellow foreground \033[39m\033[49mInverted with default colors\033[27m")
   cat("\033[7m\033[38;5;196m\033[48;5;228mInverted with red background yellow foreground \033[39m\033[49mInverted with default colors\033[27m")
+}
+####################
+test24 <- function() {
+  show_expected("\033[32m✓\033[39m |   4       | reporter-zzz\033[36m [\033[0m");
+  cat("⠹ [ \033[32mPASS\033[39m x632 \033[31mFAIL\033[39m x16 \033[35mWARN\033[39m x4", sep = "")
+  cat("\r", sep = "")
+  cat("\033[32m✓\033[39m |   4       | reporter-zzz\033[36m [\033[0m\n", sep= "")
 }
