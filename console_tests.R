@@ -150,7 +150,6 @@ test16 <- function() {
   cat("two\n")
   cat("three")
 }
-
 #####################
 f1 <- function() {
   cat("✔ xxx", crayon::blue("yyy"), "xxx")
@@ -170,4 +169,46 @@ test17 <- function() {
   f1()
   cat("\n")
   f2()
+}
+#####################
+test18 <- function() {
+    show_expected("Message")
+    str <- c(
+    "B", "\033[31m", "x", "\033[39m", "A",
+    "\r   ",
+    "\rMessage\n"
+  )
+  cat(str, sep = "")
+}
+#####################
+test19 <- function() {
+  show_expected("This is visible in both This is visible only in the terminal")
+  cat("\033[7m\033[31mThis is visible in both \033[39mThis is visible only in the terminal\033[27m")
+}
+#####################
+test20 <- function() {
+  show_expected("Part One Other Part")
+  cat("\033[7m\033[103mPart One \033[49mOther Part\033[27m")
+}
+#####################
+test21 <- function() {
+  show_expected("Part One Other Part")
+  cat("\033[7m\033[103m\033[31mPart One \033[49m\033[39mOther Part\033[27m")
+}
+#####################
+test22 <- function() {
+  show_expected("Inverted with red background Inverted with default background")
+  cat("\033[7m\033[38;5;196mInverted with red background \033[39mInverted with default background\033[27m")
+}
+#####################
+test23 <- function() {
+  show_expected("\033[7m\033[38;5;196m\033[48;5;228mInverted with red background yellow foreground \033[39m\033[49mInverted with default colors\033[27m")
+  cat("\033[7m\033[38;5;196m\033[48;5;228mInverted with red background yellow foreground \033[39m\033[49mInverted with default colors\033[27m")
+}
+####################
+test24 <- function() {
+  show_expected("\033[32m✓\033[39m |   4       | reporter-zzz\033[36m [\033[0m");
+  cat("⠹ [ \033[32mPASS\033[39m x632 \033[31mFAIL\033[39m x16 \033[35mWARN\033[39m x4", sep = "")
+  cat("\r", sep = "")
+  cat("\033[32m✓\033[39m |   4       | reporter-zzz\033[36m [\033[0m\n", sep= "")
 }
